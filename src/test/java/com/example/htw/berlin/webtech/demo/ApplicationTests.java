@@ -18,7 +18,7 @@ class ApplicationTests {
     @DisplayName( "should Check if the App can do the greetings")
     void greeting() {
         Application g = new Application();
-        assertEquals("Hello World!", g.greeting());
+        assertEquals("Hello World!", g.greetings());
     }
 
 }
