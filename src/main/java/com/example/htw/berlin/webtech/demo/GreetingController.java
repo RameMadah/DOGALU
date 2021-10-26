@@ -14,5 +14,12 @@ import org.springframework.web.bind.annotation.RequestParam;
             model.addAttribute("name", name);
             return "Index";
         }
+
+
+        @GetMapping("/home")
+        public String greetin(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+            model.addAttribute("name", name);
+            return "home";
+        }
     }
 
