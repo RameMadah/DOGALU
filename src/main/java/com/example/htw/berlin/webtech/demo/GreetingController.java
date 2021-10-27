@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
         }
 
 
-        @GetMapping("/home")
+        @GetMapping("/")
         public String greetin(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
             model.addAttribute("name", name);
             return "home";
