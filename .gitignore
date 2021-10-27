@@ -6,8 +6,11 @@ build/
 !**/src/test/**/build/
 
 .idea
-build
 .gradle/
+build
+java -jar build/libs/gs-serving-web-content-0.1.0.jar
+
+
 
 ### STS ###
 .apt_generated
