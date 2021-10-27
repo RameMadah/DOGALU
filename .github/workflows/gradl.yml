@@ -13,6 +13,6 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: "adobt"
-          java-version: 16
+
        - name: clean build
       run: ./gradlew clean test --info --stacktrace
