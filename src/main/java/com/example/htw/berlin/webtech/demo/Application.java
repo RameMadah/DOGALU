@@ -12,6 +12,6 @@ public class Application {
     }
 
     public String greetings(){
-        return "Hello World";
+        return "Hello World!";
     }
 }
