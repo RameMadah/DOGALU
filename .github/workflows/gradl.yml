@@ -1,7 +1,6 @@
 name: CI
 
-
-on : [ push ]
+on: [ push ]
 
 
 jobs:
@@ -13,6 +12,6 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: "adobt"
-
-       - name: clean build
-      run: ./gradlew clean test --info --stacktrace
+          java-version: 16
+      - name: clean build
+        run: ./gradlew clean test --info --stacktrace
