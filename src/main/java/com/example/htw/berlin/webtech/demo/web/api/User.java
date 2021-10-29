@@ -1,4 +1,4 @@
-package com.example.htw.berlin.webtech.demo.api;
+package com.example.htw.berlin.webtech.demo.web.api;
 
 public class User {
 
