@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Optional;
 
 @Controller
-    public class GreetingController {
+    public class PathController {
 
         @GetMapping("/greeting")
         public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
