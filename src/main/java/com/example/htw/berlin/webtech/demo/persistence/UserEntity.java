@@ -1,10 +1,8 @@
 package com.example.htw.berlin.webtech.demo.persistence;
-
-
 import javax.persistence.*;
 
 
-@Entity(name = "users")
+@Entity(name = "Users")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +19,15 @@ public class UserEntity {
     private String email;
 
     protected UserEntity() {
+
+    }
+
+    public UserEntity(int id, String firstname, String lastname, String email) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+
 
     }
 
@@ -53,12 +60,5 @@ public class UserEntity {
         this.email = email;
     }
 
-    public UserEntity(int id, String firstname, String lastname, String email) {
-        this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
 
-
-    }
 }
