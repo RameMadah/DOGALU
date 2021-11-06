@@ -4,7 +4,7 @@ package com.example.htw.berlin.webtech.demo.persistence;
 import javax.persistence.*;
 
 
-@Entity(name = "Users")
+@Entity(name = "users")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
