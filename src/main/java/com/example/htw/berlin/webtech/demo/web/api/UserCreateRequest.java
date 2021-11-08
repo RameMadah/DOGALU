@@ -1,43 +1,15 @@
-package com.example.htw.berlin.webtech.demo.persistence;
-import javax.persistence.*;
+package com.example.htw.berlin.webtech.demo.web.api;
 
+public class UserCreateRequest {
 
-@Entity(name = "Users")
-public class UserEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id" ,nullable = false)
-    private int id;
-
-    @Column(name = "first_name" )
     private String firstname;
-
-    @Column(name = "last_name" )
     private String lastname;
-
-    @Column(name = "Email" )
     private String email;
 
-    protected UserEntity() {
-
-    }
-
-    public UserEntity( String firstname, String lastname, String email) {
-
+    public UserCreateRequest(String firstname, String lastname, String email) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
-
-
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFirstname() {
@@ -63,6 +35,4 @@ public class UserEntity {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
 }
