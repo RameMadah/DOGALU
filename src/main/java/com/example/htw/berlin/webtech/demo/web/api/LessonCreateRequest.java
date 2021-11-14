@@ -1,4 +1,4 @@
-/*
+
 package com.example.htw.berlin.webtech.demo.web.api;
 
 public class LessonCreateRequest {
@@ -26,4 +26,3 @@ public class LessonCreateRequest {
         this.punkte = punkte;
     }
 }
-*/

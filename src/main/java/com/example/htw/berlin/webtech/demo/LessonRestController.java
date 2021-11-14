@@ -1,12 +1,9 @@
-/*
+
 package com.example.htw.berlin.webtech.demo;
 
 import com.example.htw.berlin.webtech.demo.service.LessonService;
-import com.example.htw.berlin.webtech.demo.service.UserService;
 import com.example.htw.berlin.webtech.demo.web.api.Lesson;
 import com.example.htw.berlin.webtech.demo.web.api.LessonCreateRequest;
-import com.example.htw.berlin.webtech.demo.web.api.User;
-import com.example.htw.berlin.webtech.demo.web.api.UserCreateRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,4 +43,3 @@ public class LessonRestController {
 
 
 }
-*/

@@ -1,7 +1,7 @@
 package com.example.htw.berlin.webtech.demo.persistence;
 
 import javax.persistence.*;
-/*
+
 
 @Entity(name = "lessons")
 public class LessonEntity {
@@ -14,17 +14,17 @@ public class LessonEntity {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "exp")
-    private int exp;
+    @Column(name = "punkte")
+    private int punkte;
 
     protected LessonEntity() {
 
     }
 
 
-    public LessonEntity(String title, int exp) {
+    public LessonEntity(String title, int punkte) {
         this.title = title;
-        this.exp = exp;
+        this.punkte = punkte;
     }
 
     public int getId() {
@@ -41,12 +41,11 @@ public class LessonEntity {
         this.title = title;
     }
 
-    public int getExp() {
-        return exp;
+    public int getPunkte() {
+        return punkte;
     }
 
-    public void setExp(int punkte) {
-        this.exp = punkte;
+    public void setPunkte(int punkte) {
+        this.punkte = punkte;
     }
 }
-*/
