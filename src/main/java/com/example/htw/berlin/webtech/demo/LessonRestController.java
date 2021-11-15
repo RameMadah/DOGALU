@@ -5,10 +5,7 @@ import com.example.htw.berlin.webtech.demo.service.LessonService;
 import com.example.htw.berlin.webtech.demo.web.api.Lesson;
 import com.example.htw.berlin.webtech.demo.web.api.LessonCreateRequest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -27,6 +24,13 @@ public class LessonRestController {
     @GetMapping(path = "/api/v1/Lessons")
     public ResponseEntity<List<Lesson>> fetchLessons() {
         return ResponseEntity.ok(lessonService.findAll()) ;
+    }
+
+
+    @GetMapping(path = "/api/v1/lessons/{lid}")
+    public ResponseEntity<Lesson> fetchLessonById(@PathVariable int lid) {
+        var lesson = lessonService.findById(lid);
+        return lesson != null? ResponseEntity.ok(lesson): ResponseEntity.notFound().build() ;
     }
 
 

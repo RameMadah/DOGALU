@@ -3,10 +3,7 @@ import com.example.htw.berlin.webtech.demo.service.UserService;
 import com.example.htw.berlin.webtech.demo.web.api.User;
 import com.example.htw.berlin.webtech.demo.web.api.UserCreateRequest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -31,15 +28,35 @@ public class UserRestController {
 }
 
 
+    @GetMapping(path = "/api/v1/users/{id}")
+    public ResponseEntity<User> fetchUserById(@PathVariable int id) {
+        var user = userService.findUserbyId(id);
+        return user != null? ResponseEntity.ok(user) : ResponseEntity.notFound().build();
+    }
+
+    @PutMapping(path = "/api/v1/users/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable int id,@RequestBody UserCreateRequest request ) {
+        var user = userService.update(id,request);
+        return user != null? ResponseEntity.ok(user) : ResponseEntity.notFound().build();
+    }
+
 
     @PostMapping(path = "/api/v1/users")
-    public ResponseEntity<Void> CreateUser(@RequestBody UserCreateRequest request) throws URISyntaxException {
+    public ResponseEntity<Void> createUser(@RequestBody UserCreateRequest request) throws URISyntaxException {
 
         var user = userService.create( request );
         URI uri = new URI("/api/v1/users/"+ user.getId());
        return ResponseEntity.created(uri).build();
 
     }
+
+@DeleteMapping(path = "/api/v1/users/{id}")
+    public ResponseEntity<Void> deleteUser (@PathVariable int id){
+     boolean user = userService.deleteById(id) ;
+    return user? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+    }
+
+
 
 
 }

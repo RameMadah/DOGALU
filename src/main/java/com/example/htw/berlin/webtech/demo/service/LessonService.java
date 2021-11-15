@@ -34,6 +34,11 @@ public class LessonService {
         return lessons.stream().map(this::entityToLesson).collect(Collectors.toList());
     }
 
+    public Lesson findById (int lid){
+        var lesson = lessonsRepository.findById(lid);
+        return lesson.map(this::entityToLesson).orElse(null);
+    }
+
 
 
     public Lesson createl( LessonCreateRequest request){
