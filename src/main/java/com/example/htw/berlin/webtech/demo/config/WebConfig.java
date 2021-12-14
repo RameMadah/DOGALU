@@ -1,6 +1,5 @@
 package com.example.htw.berlin.webtech.demo.config;
 
-
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -15,7 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/api/**")
                 .allowedMethods("*")
                 .allowedOrigins(
-                        "http://localhost:8010",
+                        "http://localhost:8080",
                         "https://dogalu-frontend.herokuapp.com/"
                 );
     }
