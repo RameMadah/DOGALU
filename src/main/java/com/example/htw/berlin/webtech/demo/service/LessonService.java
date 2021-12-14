@@ -42,7 +42,7 @@ public class LessonService {
 
 
     public Lesson createl( LessonCreateRequest request){
-        var lessonEntity = new LessonEntity(request.getTitle(),request.getPunkte());
+        var lessonEntity = new LessonEntity(request.getTitle(),request.getDescription(),request.getPunkte());
         lessonEntity = lessonsRepository.save(lessonEntity);
         return entityToLesson(lessonEntity);
 
@@ -53,6 +53,7 @@ public class LessonService {
         return new Lesson (
                lessonEntity.getId(),
                 lessonEntity.getTitle(),
+                lessonEntity.getDescription(),
                 lessonEntity.getPunkte()
                 );
 

@@ -21,7 +21,7 @@ public class LessonRestController {
     }
 
 
-    @GetMapping(path = "/api/v1/Lessons")
+    @GetMapping(path = "/api/v1/lessons")
     public ResponseEntity<List<Lesson>> fetchLessons() {
         return ResponseEntity.ok(lessonService.findAll()) ;
     }

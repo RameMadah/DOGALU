@@ -11,7 +11,7 @@ public class UserCreateRequest {
         this.lastname = lastname;
         this.email = email;
     }
-
+    public UserCreateRequest(){}
     public String getFirstname() {
         return firstname;
     }

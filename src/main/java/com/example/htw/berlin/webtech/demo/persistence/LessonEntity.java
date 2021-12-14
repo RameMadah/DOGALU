@@ -14,6 +14,9 @@ public class LessonEntity {
     @Column(name = "title")
     private String title;
 
+    @Column(name = "description")
+    private String description;
+
     @Column(name = "punkte")
     private int punkte;
 
@@ -22,16 +25,19 @@ public class LessonEntity {
     }
 
 
-    public LessonEntity(String title, int punkte) {
+    public LessonEntity(String title,String description, int punkte) {
         this.title = title;
         this.punkte = punkte;
+        this.description = description;
     }
 
     public int getId() {
         return id;
     }
 
-
+    public String getDescription() {
+        return description;
+    }
 
     public String getTitle() {
         return title;

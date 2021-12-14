@@ -2,24 +2,25 @@ package com.example.htw.berlin.webtech.demo.web.api;
 
 public class Lesson {
 
-    private int id;
+    private int lid;
     private String title;
+    private String  description;
     private int punkte;
 
 
-    public Lesson(int id, String title, int punkte) {
-        this.id = id;
+    public Lesson(int lid, String title, String description, int punkte) {
+        this.lid = lid;
         this.title = title;
         this.punkte = punkte;
+        this.description = description;
     }
 
-
-    public int getId() {
-        return id;
+    public int getLid() {
+        return lid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setLid(int lid) {
+        this.lid = lid;
     }
 
     public String getTitle() {
@@ -28,6 +29,14 @@ public class Lesson {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getPunkte() {
