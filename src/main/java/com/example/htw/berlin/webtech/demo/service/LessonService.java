@@ -22,7 +22,8 @@ public class LessonService {
 
     private final LessonRepository lessonsRepository;
 
-    public LessonService(LessonRepository lessonsRepository) {
+    public LessonService(LessonRepository lessonsRepository)
+    {
         this.lessonsRepository = lessonsRepository;
     }
 
