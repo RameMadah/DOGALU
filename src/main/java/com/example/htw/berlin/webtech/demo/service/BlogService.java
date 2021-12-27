@@ -24,15 +24,15 @@ public class BlogService {
         return blogs.stream().map(this::entityToBlog).collect(Collectors.toList());
     }
 
-    public Blog findById (int lid){
-        var blog = blogRepository.findById(lid);
+    public Blog findById (int id){
+        var blog = blogRepository.findById(id);
         return blog.map(this::entityToBlog).orElse(null);
     }
 
 
 
     public Blog createb( BlogCreateRequest request){
-        var blogEntity = new BlogEntity(request.getTitle(),request.getDescription());
+        var blogEntity = new BlogEntity(request.getTitle(),request.getDescription() ,request.getAuthor());
         blogEntity = blogRepository.save(blogEntity);
         return entityToBlog(blogEntity);
 
@@ -43,7 +43,8 @@ public class BlogService {
         return new Blog (
                 blogEntity.getId(),
                 blogEntity.getTitle(),
-                blogEntity.getDescription()
+                blogEntity.getDescription(),
+                blogEntity.getAuthor()
         );
 
     }

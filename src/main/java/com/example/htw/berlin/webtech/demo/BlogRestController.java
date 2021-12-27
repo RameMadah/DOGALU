@@ -26,9 +26,9 @@ public class BlogRestController {
     }
 
 
-    @GetMapping(path = "/api/v1/blogs/{lid}")
-    public ResponseEntity<Blog> fetchBlogById(@PathVariable int lid) {
-        var blog = blogService.findById(lid);
+    @GetMapping(path = "/api/v1/blogs/{id}")
+    public ResponseEntity<Blog> fetchBlogById(@PathVariable int id) {
+        var blog = blogService.findById(id);
         return blog != null? ResponseEntity.ok(blog): ResponseEntity.notFound().build() ;
     }
 
@@ -38,7 +38,7 @@ public class BlogRestController {
     public ResponseEntity<Void> CreateBlog(@RequestBody BlogCreateRequest request) throws URISyntaxException {
 
         var blog = blogService.createb( request );
-        URI uri = new URI("/api/v1/blogs/"+ blog.getTitle());
+        URI uri = new URI("/api/v1/blogs/"+ blog.getid());
         return ResponseEntity.created(uri).build();
 
     }

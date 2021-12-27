@@ -12,6 +12,9 @@ public class BlogEntity {
     @Column(name = "title")
     private String title;
 
+    @Column(name = "author")
+    private String author;
+
     @Column(name = "description")
     private String description;
 
@@ -20,13 +23,18 @@ public class BlogEntity {
     }
 
 
-    public BlogEntity(String title,String description ){
+    public BlogEntity(String title, String author, String description) {
         this.title = title;
+        this.author = author;
         this.description = description;
     }
 
     public int getId() {
         return id;
+    }
+
+    public String getAuthor() {
+        return author;
     }
 
     public String getDescription() {
