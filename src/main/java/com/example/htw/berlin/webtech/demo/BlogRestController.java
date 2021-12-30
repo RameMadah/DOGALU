@@ -36,10 +36,25 @@ public class BlogRestController {
 
     @PostMapping(path = "/api/v1/blogs")
     public ResponseEntity<Void> CreateBlog(@RequestBody BlogCreateRequest request) throws URISyntaxException {
+         var valid = validate( request);
+         if (valid){
+             var blog = blogService.createb( request );
+             URI uri = new URI("/api/v1/blogs/"+ blog.getid());
+             return ResponseEntity.created(uri).build();
+         }
+       else{
+           return ResponseEntity.badRequest().build();
+         }
 
-        var blog = blogService.createb( request );
-        URI uri = new URI("/api/v1/blogs/"+ blog.getid());
-        return ResponseEntity.created(uri).build();
+    }
 
+    private boolean validate (BlogCreateRequest request){
+        return request.getTitle().isBlank()
+                && request.getTitle() != null
+                && request.getTitle().isBlank()
+                && request.getAuthor() != null
+                && request.getAuthor().isBlank()
+                && request.getDescription() != null
+                && request.getDescription().isBlank() ;
     }
 }

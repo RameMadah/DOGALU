@@ -1,7 +1,9 @@
 package com.example.htw.berlin.webtech.demo;
 
+import com.example.htw.berlin.webtech.demo.persistence.BlogEntity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,5 +22,6 @@ class ApplicationTests {
         Application g = new Application();
         assertEquals("Hello World!", g.greetings());
     }
+
 
 }

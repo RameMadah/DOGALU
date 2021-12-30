@@ -32,7 +32,7 @@ public class BlogService {
 
 
     public Blog createb( BlogCreateRequest request){
-        var blogEntity = new BlogEntity(request.getTitle(),request.getDescription() ,request.getAuthor());
+        var blogEntity = new BlogEntity(request.getTitle(),request.getDescription(),request.getAuthor());
         blogEntity = blogRepository.save(blogEntity);
         return entityToBlog(blogEntity);
 
@@ -43,8 +43,9 @@ public class BlogService {
         return new Blog (
                 blogEntity.getId(),
                 blogEntity.getTitle(),
-                blogEntity.getDescription(),
-                blogEntity.getAuthor()
+                blogEntity.getDescription(), blogEntity.getAuthor()
+
+
         );
 
     }

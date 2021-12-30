@@ -8,6 +8,7 @@ public class BlogCreateRequest {
 
     public BlogCreateRequest(String title, String description , String author) {
         this.title = title;
+        this.author=author;
         this.description = description;
     }
   public BlogCreateRequest(){}
@@ -24,8 +25,5 @@ public class BlogCreateRequest {
         return description;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
 }
