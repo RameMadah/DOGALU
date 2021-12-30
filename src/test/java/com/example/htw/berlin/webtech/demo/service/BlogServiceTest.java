@@ -16,7 +16,7 @@ import static org.mockito.Mockito.doReturn;
 class BlogServiceTest {
     private final BlogService b = new BlogService(null);
     @Test
-    @DisplayName( "should Check if transforming from Entity to object works")
+    @DisplayName( "should Check if transforming from Blog-Entity to object works")
     void entityToBlog() {
         var ent = Mockito.mock(BlogEntity.class);
         doReturn(8).when(ent).getId();
@@ -24,11 +24,8 @@ class BlogServiceTest {
         doReturn("once Upon time ..").when(ent).getDescription();
         doReturn("Dogalu").when(ent).getTitle();
 
-
-        // when
         var result = b.entityToBlog(ent);
 
-        // then
         assertThat(result.getid()).isEqualTo(8);
         assertThat(result.getAuthor()).isEqualTo("Rame Madah");
         assertThat(result.getDescription()).isEqualTo("once Upon time ..");
@@ -37,19 +34,6 @@ class BlogServiceTest {
 
     }
 
-    @Test
-    void findAll() {
-    }
-
-    @Test
-    void findById() {
-    }
-
-    @Test
-    void createb() {
-
-
-    }
 
 
 }
