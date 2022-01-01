@@ -41,11 +41,7 @@ class LessonRestControllerTest {
         );
 
         doReturn(lessons).when(lessonService).findAll();
-
-        // when
         mockMvc.perform(get("/api/v1/lessons"))
-
-                // then
                 .andExpect(status().isOk())
 
                 .andExpect(jsonPath("$[0].lid").value(1))

@@ -55,7 +55,7 @@ public class UserService {
     }
 
     public User create(UserCreateRequest request){
-         var userEntity = new UserEntity(request.getFirstname(),request.getLastname(),request.getEmail());
+         var userEntity = new UserEntity(request.getFirstname(),request.getLastname(),request.getEmail(), request.getPassword());
          userEntity = usersRepository.save(userEntity);
         return entityToUser(userEntity);
 
@@ -68,7 +68,8 @@ public class UserService {
                 userEntity.getId(),
                 userEntity.getFirstname(),
                 userEntity.getLastname(),
-                userEntity.getEmail());
+                userEntity.getEmail(),
+              userEntity.getPassword());
 
     }
 

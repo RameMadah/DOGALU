@@ -19,16 +19,19 @@ public class UserEntity {
     @Column(name = "Email" )
     private String email;
 
+    @Column(name = "password" )
+    private String password;
+
     protected UserEntity() {
 
     }
 
-    public UserEntity( String firstname, String lastname, String email) {
+    public UserEntity( String firstname, String lastname, String email, String password) {
 
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
-
+        this.password = password;
 
     }
 
@@ -64,5 +67,7 @@ public class UserEntity {
         this.email = email;
     }
 
-
+    public String getPassword() {
+        return password;
+    }
 }

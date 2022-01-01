@@ -64,38 +64,10 @@ class BlogRestControllerTest {
     @Test
     @DisplayName("should return 404 Er if Blog doesnt exist ")
     void find404() throws Exception {
-        // given
         doReturn(null).when(blogService).findById(anyInt());
 
-        // when
         mockMvc.perform(get("/api/v1/blogs/888"))
-                // then
                 .andExpect(status().isNotFound());
     }
 
-
-/*
-    @Test
-    @DisplayName("should return 201 http status and Location header when creating a person")
-    void should_return_201_http_status_and_location_header_when_creating_a_person() throws Exception {
-        // given
-        String blogToCreateAsJson = "{\"title\":\"Dogalu\", \"author\":\"Rame\", \"description\":\"text\"}";
-
-        var blog = new Blog(888, null, null, null);
-
-        doReturn(blog).when(blogService).createb(any());
-
-        // when
-        mockMvc.perform(
-                        post("/api/v1/blogs")
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .content(blogToCreateAsJson)
-                )
-
-                // then
-                .andExpect(status().isCreated())
-                .andExpect(header().exists("Location"))
-                .andExpect(header().string("Location", Matchers.equalTo(("/api/v1/blogs/"+ blog.getid()))));
-
-    }*/
 }

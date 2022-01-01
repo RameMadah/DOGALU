@@ -5,11 +5,13 @@ public class UserCreateRequest {
     private String firstname;
     private String lastname;
     private String email;
+    private String password;
 
-    public UserCreateRequest(String firstname, String lastname, String email) {
+    public UserCreateRequest(String firstname, String lastname, String email, String password) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
+        this.password = password;
     }
     public UserCreateRequest(){}
     public String getFirstname() {
@@ -34,5 +36,9 @@ public class UserCreateRequest {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }
