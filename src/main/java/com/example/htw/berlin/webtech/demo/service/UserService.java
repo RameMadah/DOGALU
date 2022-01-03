@@ -41,6 +41,7 @@ public class UserService {
         userEntity.setFirstname(request.getFirstname());
         userEntity.setLastname(request.getLastname());
         userEntity.setEmail(request.getEmail());
+        userEntity.setEmail(request.getPassword());
         usersRepository.save(userEntity);
 
         return entityToUser(userEntity);
