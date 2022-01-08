@@ -39,7 +39,7 @@ import java.util.List;
         public ResponseEntity<Void> CreateLesson(@RequestBody LessonCreateRequest request) throws URISyntaxException {
 
             var lesson = lessonService.createl( request );
-            URI uri = new URI("/api/v1/lessons/"+ lesson.getTitle());
+            URI uri = new URI("/api/v1/lessons/"+ lesson.getLid());
             return ResponseEntity.created(uri).build();
 
         }

@@ -22,39 +22,36 @@ public class BlogRestController {
 
     @GetMapping(path = "/api/v1/blogs")
     public ResponseEntity<List<Blog>> fetchBlogs() {
-        return ResponseEntity.ok(blogService.findAll()) ;
+        return ResponseEntity.ok(blogService.findAll());
     }
 
 
     @GetMapping(path = "/api/v1/blogs/{id}")
     public ResponseEntity<Blog> fetchBlogById(@PathVariable int id) {
         var blog = blogService.findById(id);
-        return blog != null? ResponseEntity.ok(blog): ResponseEntity.notFound().build() ;
+        return blog != null ? ResponseEntity.ok(blog) : ResponseEntity.notFound().build();
     }
-
 
 
     @PostMapping(path = "/api/v1/blogs")
     public ResponseEntity<Void> CreateBlog(@RequestBody BlogCreateRequest request) throws URISyntaxException {
-         var valid = validate( request);
-         if (valid){
-             var blog = blogService.createb( request );
-             URI uri = new URI("/api/v1/blogs/"+ blog.getid());
-             return ResponseEntity.created(uri).build();
-         }
-       else{
-           return ResponseEntity.badRequest().build();
-         }
+        var valid = validate(request);
+        if (valid) {
+            var blog = blogService.createb(request);
+            URI uri = new URI("/api/v1/blogs/" + blog.getid());
+            return ResponseEntity.created(uri).build();
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
 
     }
 
-    private boolean validate (BlogCreateRequest request){
-        return request.getTitle().isBlank()
-                && request.getTitle() != null
-                && request.getTitle().isBlank()
-                && request.getAuthor() != null
-                && request.getAuthor().isBlank()
-                && request.getDescription() != null
-                && request.getDescription().isBlank() ;
+    private boolean validate(BlogCreateRequest request) {
+        return (request.getTitle() == null
+                || !request.getTitle().isBlank())
+                && (request.getAuthor() == null
+                || !request.getAuthor().isBlank())
+                && (request.getDescription() == null
+                || !request.getDescription().isBlank());
     }
 }
